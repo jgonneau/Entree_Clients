@@ -1,2 +1,2 @@
 #Entree_Clients 
-Old C# project managing clients made on 2012 
+C# project managing clients made on 2012 

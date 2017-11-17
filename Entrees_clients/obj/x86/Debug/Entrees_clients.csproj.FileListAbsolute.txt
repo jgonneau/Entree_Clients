@@ -1,0 +1,15 @@
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\bin\Debug\Entrees_clients.exe
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\bin\Debug\Entrees_clients.pdb
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\Entrees_clients.exe
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\Entrees_clients.pdb
+C:\Users\SUPINFO\Documents\Visual Studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\WindowsFormsApplication1.FORM.resources
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\WindowsFormsApplication1.Formulaire_entree.resources
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\WindowsFormsApplication1.Archive.resources
+C:\Users\SUPINFO\documents\visual studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\WindowsFormsApplication1.Apropos.resources
+C:\Users\SUPINFO\Documents\Visual Studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\WindowsFormsApplication1.Fmat.resources
+C:\Users\JP\Documents\Visual Studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\Entrees_clients.exe
+C:\Users\JP\Documents\Visual Studio 2010\Projects\Entrees_clients\Entrees_clients\obj\x86\Debug\Entrees_clients.pdb

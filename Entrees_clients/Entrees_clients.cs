@@ -28,6 +28,7 @@ namespace WindowsFormsApplication1
 
             StreamReader sr = new StreamReader("donnees.dat");
             int j = 0;
+            int i = 0;
             string donnee;
             int bcl = 1;
 
@@ -62,23 +63,11 @@ namespace WindowsFormsApplication1
                         }
                         dataGridView1.Rows[0].Cells[0].Style.ForeColor = Color.LightGray;
                     }
-                    dataGridView1.Rows[j].Cells[2].Value = donnee;
-                    donnee = sr.ReadLine();
-                    dataGridView1.Rows[j].Cells[3].Value = donnee;
-                    donnee = sr.ReadLine();
-                    dataGridView1.Rows[j].Cells[4].Value = donnee;
-                    donnee = sr.ReadLine();
-                    dataGridView1.Rows[j].Cells[5].Value = donnee;
-                    donnee = sr.ReadLine();
-                    dataGridView1.Rows[j].Cells[6].Value = donnee;
-                    donnee = sr.ReadLine();
-                    dataGridView1.Rows[j].Cells[7].Value = donnee;
-                    donnee = sr.ReadLine();
-                    dataGridView1.Rows[j].Cells[8].Value = donnee;
-                    donnee = sr.ReadLine();
-                    dataGridView1.Rows[j].Cells[9].Value = donnee;
-                    donnee = sr.ReadLine();
-                    dataGridView1.Rows[j].Cells[10].Value = donnee;
+                    for (i = 2; i <= 10; i++)
+                    {
+                        donnee = sr.ReadLine();
+                        dataGridView1.Rows[j].Cells[i].Value = donnee;
+                    }
                     j++;
                 }
                 else
@@ -116,27 +105,11 @@ namespace WindowsFormsApplication1
                         dgv_arch.Rows[j].Cells[0].Style.ForeColor = Color.Blue;
                         dgv_arch.Rows[j].Cells[0].Value = "Terminé.";
                     }
+                    for (i = 1; i <= 10; i++)
+                    {
                     donnee = sor.ReadLine();
-                    dgv_arch.Rows[j].Cells[1].Value = donnee;
-                    donnee = sor.ReadLine();
-                    dgv_arch.Rows[j].Cells[2].Value = donnee;
-                    donnee = sor.ReadLine();
-                    dgv_arch.Rows[j].Cells[3].Value = donnee;
-                    donnee = sor.ReadLine();
-                    dgv_arch.Rows[j].Cells[4].Value = donnee;
-                    donnee = sor.ReadLine();
-                    dgv_arch.Rows[j].Cells[5].Value = donnee;
-                    donnee = sor.ReadLine();
-                    dgv_arch.Rows[j].Cells[6].Value = donnee;
-                    donnee = sor.ReadLine();
-                    dgv_arch.Rows[j].Cells[7].Value = donnee;
-                    donnee = sor.ReadLine();
-                    dgv_arch.Rows[j].Cells[8].Value = donnee;
-                    donnee = sor.ReadLine();
-                    dgv_arch.Rows[j].Cells[9].Value = donnee;
-                    donnee = sor.ReadLine();
-                    dgv_arch.Rows[j].Cells[10].Value = donnee;
-                    //neuvieme donnee;
+                    dgv_arch.Rows[j].Cells[i].Value = donnee;
+                    }
                     j++;
                 }
                 else
@@ -206,6 +179,8 @@ namespace WindowsFormsApplication1
 
         private void bt_retrait_entree_Click(object sender, EventArgs e)
         {
+            int clls = 0;
+           
             if (indexo >= 0)
             {
                 DialogResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cette cellule ?", "Avertissement !",
@@ -213,15 +188,10 @@ namespace WindowsFormsApplication1
                                     MessageBoxIcon.Warning);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    dataGridView1.Rows[indexo].Cells[0].Value = "";
-                    dataGridView1.Rows[indexo].Cells[1].Value = "";
-                    dataGridView1.Rows[indexo].Cells[2].Value = "";
-                    dataGridView1.Rows[indexo].Cells[3].Value = "";
-                    dataGridView1.Rows[indexo].Cells[4].Value = "";
-                    dataGridView1.Rows[indexo].Cells[5].Value = "";
-                    dataGridView1.Rows[indexo].Cells[6].Value = "";
-                    dataGridView1.Rows[indexo].Cells[7].Value = "";
-                    dataGridView1.Rows[indexo].Cells[8].Value = "";
+                    for (clls = 0; clls <= 8; clls++)
+                    {
+                    dataGridView1.Rows[indexo].Cells[clls].Value = "";
+                    }
                     dataGridView1.Rows.RemoveAt(indexo);
                 }
             }
@@ -309,21 +279,24 @@ namespace WindowsFormsApplication1
         }
 
 
-        public static int nouvelledonnee = 0;
-        public static int numero_client = 0;
-        public static string date_dentree = "";
-        public static string nom_client = "";
-        public static string prenom_client = "";
-        public static string tel_fixe = "";
-        public static string tel_gsm = "";
-        public static string nom_probleme = "";
-        public static string nom_motdepasse = "";
-        public static string nom_fournisseur = "";
-        public static int fenet_arch = 0;
+        public static int nouvelledonnee = 0,
+                      int numero_client = 0,
+                      int fenet_arch = 0;
+        public static string date_dentree = "",
+                      string nom_client = "",
+                      string prenom_client = "",
+                      string tel_fixe = "",
+                      string tel_gsm = "",
+                      string nom_probleme = "",
+                      string nom_motdepasse = "",
+                      string nom_fournisseur = "";
+        
 
         int cbpd = 0, bpd;
         private void TIK_Tick(object sender, EventArgs e)
         {
+            int clls = 0;
+            
             if (dataGridView1.Rows.Count <= 0)
             {
                 cbpd = 0;
@@ -407,16 +380,10 @@ namespace WindowsFormsApplication1
                 {
                     sw.WriteLine("2");
                 }
-                sw.WriteLine(dataGridView1.Rows[i].Cells[1].Value);
-                sw.WriteLine(dataGridView1.Rows[i].Cells[2].Value);
-                sw.WriteLine(dataGridView1.Rows[i].Cells[3].Value);
-                sw.WriteLine(dataGridView1.Rows[i].Cells[4].Value);
-                sw.WriteLine(dataGridView1.Rows[i].Cells[5].Value);
-                sw.WriteLine(dataGridView1.Rows[i].Cells[6].Value);
-                sw.WriteLine(dataGridView1.Rows[i].Cells[7].Value);
-                sw.WriteLine(dataGridView1.Rows[i].Cells[8].Value);
-                sw.WriteLine(dataGridView1.Rows[i].Cells[9].Value);
-                sw.WriteLine(dataGridView1.Rows[i].Cells[10].Value);
+                for (clls = 1; clls <= 10; clls++)
+                {
+                    sw.WriteLine(dataGridView1.Rows[i].Cells[clls].Value);
+                }
                 i++;
             }
             sw.WriteLine("End");
@@ -440,16 +407,10 @@ namespace WindowsFormsApplication1
                     {
                         swa.WriteLine("2");
                     }
-                    swa.WriteLine(dgv_arch.Rows[i].Cells[1].Value);
-                    swa.WriteLine(dgv_arch.Rows[i].Cells[2].Value);
-                    swa.WriteLine(dgv_arch.Rows[i].Cells[3].Value);
-                    swa.WriteLine(dgv_arch.Rows[i].Cells[4].Value);
-                    swa.WriteLine(dgv_arch.Rows[i].Cells[5].Value);
-                    swa.WriteLine(dgv_arch.Rows[i].Cells[6].Value);
-                    swa.WriteLine(dgv_arch.Rows[i].Cells[7].Value);
-                    swa.WriteLine(dgv_arch.Rows[i].Cells[8].Value);
-                    swa.WriteLine(dgv_arch.Rows[i].Cells[9].Value);
-                    swa.WriteLine(dgv_arch.Rows[i].Cells[10].Value);
+                    for (clls = 1; clls <= 10; clls++) 
+                    {
+                        swa.WriteLine(dgv_arch.Rows[i].Cells[clls].Value);
+                    }
                     i++;
                 }
                 swa.WriteLine("End");
@@ -493,8 +454,8 @@ namespace WindowsFormsApplication1
         }
 
         public static int verif_arch = 0;
-        public static string str_archive = "";
-        public static string str_a_archive = "";
+        public static string str_archive = "",
+                      string str_a_archive = "";
         private void bt_archives_Click(object sender, EventArgs e)
         {
 
@@ -515,23 +476,25 @@ namespace WindowsFormsApplication1
         }
 
         public static int nouveau_arch = 0;
-        public static string cli_statu = "";
-        public static string cli_num = "";
-        public static string cli_date = "";
-        public static string cli_nom = "";
-        public static string cli_prenom = "";
-        public static string cli_gsm = "";
-        public static string cli_fixe = "";
-        public static string cli_fournisseur = "";
-        public static string cli_probleme = "";
-        public static string cli_motdepasse = "";
-        public static string cli_materielchange = "";
+        public static string cli_statu = "",
+                             cli_num = "",
+                             cli_date = "",
+                             cli_nom = "",
+                             cli_prenom = "",
+                             cli_gsm = "",
+                             cli_fixe = "",
+                             cli_fournisseur = "",
+                             cli_probleme = "",
+                             cli_motdepasse = "",
+                             cli_materielchange = "";
+                             
         private void archiverToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             ///
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
+            int clls = 0;
 
 
             result = MessageBox.Show("Voulez-vous mettre cette donnée client dans les archives ?\n", "Avertissement", buttons, MessageBoxIcon.Information);
@@ -555,35 +518,20 @@ namespace WindowsFormsApplication1
                 for (nb = 0; nb < dgv_arch.Rows.Count; nb++)
                 {
                     tempo.WriteLine("X");
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[0].Value);
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[1].Value);
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[2].Value);
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[3].Value);
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[4].Value);
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[5].Value);
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[6].Value);
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[7].Value);
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[8].Value);
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[9].Value);
-                    tempo.WriteLine(dgv_arch.Rows[nb].Cells[10].Value);
+                    for (clls = 0; clls <= 10; clls++)
+                    {
+                        tempo.WriteLine(dgv_arch.Rows[nb].Cells[clls].Value);
+                    }
                 }
                 tempo.WriteLine("End");
                 tempo.Close();
             }
             else
             {//verif_arch=1
-
-                cli_statu = dataGridView1.Rows[indexo].Cells[0].Value.ToString();
-                cli_num = dataGridView1.Rows[indexo].Cells[1].Value.ToString();
-                cli_date = dataGridView1.Rows[indexo].Cells[2].Value.ToString();
-                cli_nom = dataGridView1.Rows[indexo].Cells[3].Value.ToString();
-                cli_prenom = dataGridView1.Rows[indexo].Cells[4].Value.ToString();
-                cli_fixe = dataGridView1.Rows[indexo].Cells[5].Value.ToString();
-                cli_gsm = dataGridView1.Rows[indexo].Cells[6].Value.ToString();
-                cli_fournisseur = dataGridView1.Rows[indexo].Cells[7].Value.ToString();
-                cli_probleme = dataGridView1.Rows[indexo].Cells[8].Value.ToString();
-                cli_motdepasse = dataGridView1.Rows[indexo].Cells[9].Value.ToString();
-                cli_materielchange = dataGridView1.Rows[indexo].Cells[10].Value.ToString();
+                for (clls = 0; clls <= 10; clls++)
+                {
+                    cli_statu = dataGridView1.Rows[indexo].Cells[clls].Value.ToString();
+                }
                 nouveau_arch = 1;
             }
 
@@ -592,9 +540,11 @@ namespace WindowsFormsApplication1
             ///
         }
 
-        public static int mem_indexo;
+       
         public static string mem_mater_chg;
-        public static int fen_chang_opoc = 0;
+        public static int fen_chang_opoc = 0,
+                      int mem_indexo;
+                      
         private void finDeTâchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (fen_chang_opoc == 0)
